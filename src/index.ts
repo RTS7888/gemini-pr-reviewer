@@ -6,8 +6,8 @@ import { ReviewComment } from './types';
 async function run(): Promise<void> {
   try {
     // Get inputs
-    const githubToken = core.getInput('github_token', { required: true });
-    const geminiApiKey = core.getInput('gemini_api_key', { required: true });
+    const githubToken = core.getInput('github_token');
+    const geminiApiKey = core.getInput('gemini_api_key');
     const maxComments = parseInt(core.getInput('max_comments') || '10');
     const minSeverity = core.getInput('min_severity') || 'medium';
 
@@ -16,6 +16,14 @@ async function run(): Promise<void> {
     core.info('Gemini API key received: ' + (geminiApiKey ? 'YES' : 'NO'));
     core.info('Max comments: ' + maxComments);
     core.info('Min severity: ' + minSeverity);
+
+    // Validate required inputs
+    if (!githubToken) {
+      throw new Error('GitHub token is required');
+    }
+    if (!geminiApiKey) {
+      throw new Error('Gemini API key is required');
+    }
 
     // Get PR context from environment
     const owner = core.getInput('owner') || process.env.GITHUB_REPOSITORY_OWNER!;

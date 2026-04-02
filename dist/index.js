@@ -52385,8 +52385,8 @@ const gemini_client_1 = __nccwpck_require__(3532);
 async function run() {
     try {
         // Get inputs
-        const githubToken = core.getInput('github_token', { required: true });
-        const geminiApiKey = core.getInput('gemini_api_key', { required: true });
+        const githubToken = core.getInput('github_token');
+        const geminiApiKey = core.getInput('gemini_api_key');
         const maxComments = parseInt(core.getInput('max_comments') || '10');
         const minSeverity = core.getInput('min_severity') || 'medium';
         // Debug: Check if inputs are received
@@ -52394,6 +52394,13 @@ async function run() {
         core.info('Gemini API key received: ' + (geminiApiKey ? 'YES' : 'NO'));
         core.info('Max comments: ' + maxComments);
         core.info('Min severity: ' + minSeverity);
+        // Validate required inputs
+        if (!githubToken) {
+            throw new Error('GitHub token is required');
+        }
+        if (!geminiApiKey) {
+            throw new Error('Gemini API key is required');
+        }
         // Get PR context from environment
         const owner = core.getInput('owner') || process.env.GITHUB_REPOSITORY_OWNER;
         const repo = core.getInput('repo') || process.env.GITHUB_REPOSITORY?.split('/')[1];
