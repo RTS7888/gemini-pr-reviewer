@@ -11,7 +11,7 @@ class GeminiClient {
         try {
             const prompt = this.buildPrompt(diff, prTitle, prDescription);
             const response = await this.genAI.models.generateContent({
-                model: "gemini-1.5-pro",
+                model: "gemini-1.5-flash",
                 contents: [
                     { role: "user", parts: [{ text: system_prompt_1.SYSTEM_PROMPT }] },
                     { role: "user", parts: [{ text: prompt }] }
