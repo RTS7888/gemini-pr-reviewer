@@ -1,5 +1,5 @@
 name: 'Gemini PR Reviewer'
-description: 'Automated code review using Google Gemini AI'
+description: 'Automated GitHub PR Review System powered by Google Gemini API'
 author: 'PR Reviewer Bot'
 branding:
   icon: 'code'
