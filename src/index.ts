@@ -6,7 +6,7 @@ import { ReviewComment } from './types';
 async function run(): Promise<void> {
   try {
     // Get inputs
-    const githubToken = core.getInput('github-token', { required: true });
+    const githubToken = core.getInput('github_token', { required: true });
     const geminiApiKey = core.getInput('gemini_api_key', { required: true });
     const maxComments = parseInt(core.getInput('max_comments') || '10');
     const minSeverity = core.getInput('min_severity') || 'medium';

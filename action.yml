@@ -6,7 +6,7 @@ branding:
   color: 'blue'
 
 inputs:
-  github-token:
+  github_token:
     description: 'GitHub token for API access'
     required: true
   gemini_api_key:
