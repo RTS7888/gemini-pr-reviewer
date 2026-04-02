@@ -1,0 +1,41 @@
+name: 'Gemini PR Reviewer'
+description: 'Automated code review using Google Gemini AI'
+author: 'PR Reviewer Bot'
+branding:
+  icon: 'code'
+  color: 'blue'
+
+inputs:
+  github-token:
+    description: 'GitHub token for API access'
+    required: true
+  gemini-api-key:
+    description: 'Google Gemini API key'
+    required: true
+  max-comments:
+    description: 'Maximum number of comments to post'
+    required: false
+    default: '10'
+  min-severity:
+    description: 'Minimum severity level to comment on (critical, high, medium, low, info)'
+    required: false
+    default: 'medium'
+  owner:
+    description: 'Repository owner (auto-detected from environment)'
+    required: false
+  repo:
+    description: 'Repository name (auto-detected from environment)'
+    required: false
+  pr-number:
+    description: 'PR number (auto-detected from environment)'
+    required: false
+
+outputs:
+  review-summary:
+    description: 'Summary of the review performed'
+  comments-posted:
+    description: 'Number of comments posted'
+
+runs:
+  using: 'node20'
+  main: 'dist/index.js'
