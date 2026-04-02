@@ -5,6 +5,9 @@ branding:
   icon: 'code'
   color: 'blue'
 
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
 inputs:
   github_token:
     description: 'GitHub token for API access'
