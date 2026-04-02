@@ -9,14 +9,14 @@ inputs:
   github-token:
     description: 'GitHub token for API access'
     required: true
-  gemini-api-key:
+  gemini_api_key:
     description: 'Google Gemini API key'
     required: true
-  max-comments:
+  max_comments:
     description: 'Maximum number of comments to post'
     required: false
     default: '10'
-  min-severity:
+  min_severity:
     description: 'Minimum severity level to comment on (critical, high, medium, low, info)'
     required: false
     default: 'medium'
