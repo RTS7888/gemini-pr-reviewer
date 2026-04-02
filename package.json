@@ -4,8 +4,7 @@
   "description": "Automated GitHub PR Review System powered by Google Gemini API",
   "main": "dist/index.js",
   "scripts": {
-    "build": "tsc",
-    "package": "npm run build && cp dist/index.js .",
+    "build": "tsc && ncc build src/index.ts -o dist",
     "test": "jest",
     "lint": "eslint src/**/*.ts",
     "format": "prettier --write src/**/*.ts"
