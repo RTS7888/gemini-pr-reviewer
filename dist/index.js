@@ -52386,9 +52386,9 @@ async function run() {
     try {
         // Get inputs
         const githubToken = core.getInput('github-token', { required: true });
-        const geminiApiKey = core.getInput('gemini-api-key', { required: true });
-        const maxComments = parseInt(core.getInput('max-comments') || '10');
-        const minSeverity = core.getInput('min-severity') || 'medium';
+        const geminiApiKey = core.getInput('gemini_api_key', { required: true });
+        const maxComments = parseInt(core.getInput('max_comments') || '10');
+        const minSeverity = core.getInput('min_severity') || 'medium';
         // Get PR context from environment
         const owner = core.getInput('owner') || process.env.GITHUB_REPOSITORY_OWNER;
         const repo = core.getInput('repo') || process.env.GITHUB_REPOSITORY?.split('/')[1];
