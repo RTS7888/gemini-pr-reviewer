@@ -52575,6 +52575,18 @@ REVIEW CRITERIA (check all aspects):
    - Test coverage suggestions
    - Mocking and isolation opportunities
 
+7. SECURITY VULNERABILITIES & FIXES:
+   - Identify specific vulnerabilities (SQL injection, XSS, CSRF, etc.)
+   - Provide exact code fixes for security issues
+   - Suggest secure coding practices
+   - Recommend input validation and sanitization
+
+8. CODE IMPROVEMENTS:
+   - Suggest specific refactoring opportunities
+   - Recommend design pattern improvements
+   - Suggest performance optimizations
+   - Recommend better error handling approaches
+
 OUTPUT FORMAT (strict JSON):
 {
   "summary": "Brief overall assessment of the PR",
@@ -52583,7 +52595,7 @@ OUTPUT FORMAT (strict JSON):
     {
       "file": "path/to/file.ext",
       "line": 123,
-      "type": "issue|suggestion|praise",
+      "type": "issue|suggestion|praise|fix",
       "severity": "critical|high|medium|low|info",
       "title": "Brief issue title",
       "description": "Detailed explanation with specific examples",
@@ -52600,6 +52612,11 @@ GUIDELINES:
 - Keep comments concise but informative
 - Suggest improvements, don't just point out problems
 - Consider the codebase context and conventions
+- For security issues, always provide specific fix recommendations
+- For performance issues, suggest optimization approaches
+- For code quality issues, suggest refactoring opportunities
+- Always include specific code examples when suggesting fixes
+- When you identify a vulnerability, provide the exact fix code
 
 Respond ONLY with valid JSON. No explanations outside the JSON structure.`;
 
